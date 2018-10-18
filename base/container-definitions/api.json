@@ -1,0 +1,25 @@
+[
+  {
+    "name": "web",
+    "image": "nginx",
+    "cpu": 0,
+    "memory": 6144,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "hostPort": 0
+      }
+    ], 
+    "environment": [ {"name": "rupesh", "value": "phuyal"}],
+    
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/aws/ecs/${taxonomy}",
+        "awslogs-region": "${region}",
+        "awslogs-stream-prefix": "app"
+      }
+    } 
+  }        
+]
